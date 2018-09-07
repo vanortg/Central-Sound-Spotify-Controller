@@ -1,2 +1,2 @@
 # Central-Sound-Spotify-Controller
-A Spotify controller that allows for outside users to upvote, downvote, and add songs to a queue on a Spotify connected sound system.
+A Spotify controller that allows for outside users to upvote, downvote, and add songs to a queue on a Central-Sound-Spotify connected sound system. There are two html interfaces, the first, player.html, is for use on a laptop or phone connected to the sound system. The second, client.html, is used as an upvote, downvote, and queue controller on a local network. The player can be controlled remotely through spotify's user device connect.
