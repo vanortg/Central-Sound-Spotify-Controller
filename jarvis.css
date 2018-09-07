@@ -1,0 +1,251 @@
+body {
+    margin:0px;
+    padding: 0px;
+    background-color: #191919;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    color: #ecebe8;
+}
+
+
+main {
+    margin-left: auto;
+    margin-right: auto;   
+    width: 70%; 
+    display: flex;
+    flex-flow: column wrap;
+}
+
+section {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: white;
+    justify-content: space-around;
+}
+
+aside {
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+}
+
+.align-centered {
+    align-self: center;
+}
+
+/* #musicPro {
+    position: relative;
+} */
+
+#login {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    margin:0;
+    background: blue;
+    justify-content: space-around;
+    align-content: center;
+    z-index: 100;
+}
+
+#logcont {
+    height: 40%;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    background: red;
+    align-self: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+#name {
+    max-height: 1.3em;
+}
+
+#mufill {
+    width: 0%;
+    height: 0.3em;
+    background-color: #1ed760;
+    position: absolute;
+}
+
+ul {
+    margin: 0px;
+}
+
+#playlistcover {
+    width: 300px;
+    height: 300px;
+    background: url("https://mosaic.scdn.co/640/59bfebce86bfccd2bfce20595eca9959ce29c21e70d5d04703139de6ea3d708a489f8ffdb25855e033c9c916ba4def46eb5f3ca043dba77156acd8dfba7945c7b69615d0b6ff1366d751d10cb232f55c");
+    background-size: 100%;
+}
+
+#playlistdata {
+    line-height: 12pt;
+    color: #ecebe8;
+}
+
+h1 {
+    font-size: 32pt;
+    color: white;
+}
+
+#styletop {
+    width: 100%;
+    position: fixed;
+    z-index: 4;
+}
+
+
+
+#menu {
+    width: 70%;
+    height: 20px;
+    position: fixed;
+    top: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    width: 40%;
+    max-width: 300px;
+    border-radius: 5px;
+}
+
+#queuehead {
+    font-size: 3em;
+    font-weight: bold;
+}
+
+li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-bottom: 1px solid #323232;
+    color: #ecebe8;
+    font-size: 10pt;
+}
+
+li.title-cover {
+    border-bottom: none;
+}
+
+#songhead {
+    position: sticky;
+    border-bottom: 2px solid #666666;
+}
+
+#songhead li {
+    max-height: 50px;
+    font-size: 12pt;
+    font-family: monospace, serif;
+}
+
+li div {
+    width: 130px;
+}
+
+ul {
+    padding: 0px;
+}
+
+button {
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    border-radius: 10px;
+    align-self: center;
+    outline: 0;
+    cursor: pointer;
+}
+
+svg {
+    width: 30px;
+    height: 30px;
+}
+
+.fill {
+    fill: #666;
+}
+
+#votes {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.popupcover {
+    position: relative;
+}
+
+.popup {
+    display: none;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.popupcover .popup {
+    width: 25px;
+    height: 25px;
+    top: 50%;
+    transform: translate(0%, -50%);
+    background-color: #323232;
+    color: #ecebe8;
+    text-align: center;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    font-size: 9pt;
+}
+
+.popupcover .popup::after {
+    content: "";
+    position: absolute;
+    top: 30%;
+    left: 0%;
+    margin-left: -10px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #323232 transparent transparent;
+}
+
+.popupcover .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+}
+
+span {
+    align-self: center;
+    color: #ecebe8;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+
+@media only screen and (max-width: 500px) {
+    main {
+        width: 90%;
+    }
+    .spacer {
+        max-width: 10%;
+    }
+    #songname {
+        font-size: 40px;
+    }
+}
