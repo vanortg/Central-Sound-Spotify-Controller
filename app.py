@@ -10,12 +10,13 @@ def index():
 @app.route('/callback/')
 def callback():
     startup.getUserToken(request.args['code'])
-    return redirect('/home')
+    return redirect('home')
 
 @app.route('/home')
 def home():
     return render_template('player.html')
 
-@app.route('/post/')
+@app.route('/accessToken')
 def postReturn():
-    print(request.args)
+    tokenData = startup.getAccessToken()
+    return tokenData[0]
