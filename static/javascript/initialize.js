@@ -1,6 +1,12 @@
 window.onSpotifyWebPlaybackSDKReady = () => {
-    const token = "{{ url_for('/getAccessToken') }}";
+    
+    let token = "";
 
+    $.get('/accessToken', function(data, status) {
+        token = data;
+        console.log(token);
+    });
+    
     const player = new Spotify.Player({
         name: 'Web Playback SDK Quick Start Player',
         getOAuthToken: cb => { cb(token); }

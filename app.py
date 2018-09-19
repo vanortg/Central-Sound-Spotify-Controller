@@ -17,6 +17,7 @@ def home():
     return render_template('player.html')
 
 @app.route('/accessToken')
-def postReturn():
-    tokenData = startup.getAccessToken()
-    return tokenData[0]
+def tokenReturn():
+    accessToken = startup.getAccessToken()
+    return accessToken[0]
+    

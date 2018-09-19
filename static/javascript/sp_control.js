@@ -12,7 +12,7 @@ let percent;
 let k;
 let queue = [];
 
-function $(id) {
+function id(id) {
     return document.getElementById(id);
 }
 
@@ -40,6 +40,7 @@ function getTracks(player) {
             if (state) {
                 console.log(state);
                 clear();
+                console.log(state.track_window.current_track);
                 setcover(state.track_window.current_track);
                 let nextTracks = state.track_window.next_tracks;
                 for (let i = 0; i < nextTracks.length; i++) {
@@ -53,19 +54,19 @@ function getTracks(player) {
 function setcover(currentTrack) {
     if (currentTrack.name != $("songname").innerText) {
         clearInterval(clock);
-        $("mufill").style.width = 0 + "%";
+        id("mufill").style.width = 0 + "%";
         timer = currentTrack.duration_ms;
-        cons = $("backmu").offsetWidth;
+        cons = id("backmu").offsetWidth;
         k = (cons / timer) * 50;
         console.log(k, timer, cons);
         percent = 0;
         let sec = timer * 0.001;
         let rem = sec % 60;
         let min = sec / 60;
-        $("songdata").innerText = Math.floor(min) + " mins " + Math.ceil(rem) + " sec";
-        $("songname").innerText = currentTrack.name;
-        $("songartist").innerText = currentTrack.artists[0].name;
-        $("playlistcover").style.background = "url(" + currentTrack.album.images[0].url + ")";
+        id("songdata").innerText = Math.floor(min) + " mins " + Math.ceil(rem) + " sec";
+        id("songname").innerText = currentTrack.name;
+        id("songartist").innerText = currentTrack.artists[0].name;
+        id("playlistcover").style.background = "url(" + currentTrack.album.images[0].url + ")";
         clock = setInterval(progressbar, 50);
     }
 }
@@ -73,11 +74,11 @@ function setcover(currentTrack) {
 function progressbar() {
     if (timer < 50) {
         clearInterval(clock);
-        $("mufill").style.width = 0 + "%";
+        id("mufill").style.width = 0 + "%";
         percent = 0;
     } else {
         percent = percent + k;
-        $("mufill").style.width = percent + "px";
+        id("mufill").style.width = percent + "px";
         timer = timer - 50;
     }
 }
@@ -167,7 +168,7 @@ function buildLi (response) {
 
     li.appendChild(voting);
 
-    let ul = $("songqueue");
+    let ul = id("songqueue");
     ul.appendChild(li);
 }
 
@@ -216,7 +217,7 @@ function updateUp () {
 }
 
 function runQueue () {
-    let ul = $("songqueue");
+    let ul = id("songqueue");
     for (let i = 0; i < queue.length; i++) {
         if (queue[i] != null) {
             ul.appendChild(queue[i]);
@@ -225,13 +226,13 @@ function runQueue () {
 }
 
 function clear() {
-    let ul = $("songqueue");
+    let ul = id("songqueue");
     ul.innerHTML = "";
 }
 
 function refreshQueue () {
     let newQ = [];
-    let elements = $("songqueue").children;
+    let elements = id("songqueue").children;
     for (let i = 0; i < elements.length; i++) {
         newQ.push(elements[i]);
     }
