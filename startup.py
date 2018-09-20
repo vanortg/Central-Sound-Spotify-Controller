@@ -1,10 +1,10 @@
 from flask_spotify_auth import getAuth, refreshAuth, getToken
 
 #Add your client ID
-CLIENT_ID = "98c167e218bd483891f8638caaca19cb"
+CLIENT_ID = ""
 
 #aDD YOUR CLIENT SECRET FROM SPOTIFY
-CLIENT_SECRET = "e40d06af72524208bf0bbb048ba299a3"
+CLIENT_SECRET = ""
 
 #Port and callback url can be changed or ledt to localhost:5000
 PORT = "5000"
